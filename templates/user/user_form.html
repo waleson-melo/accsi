@@ -1,0 +1,25 @@
+{% extends 'template_main.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+
+        {{ mess }}
+
+        <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}:</label>
+        {% render_field form.first_name %}
+        <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}:</label>
+        {% render_field form.last_name %}
+        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
+        {% render_field form.email %}
+        <label for="{{ form.username.id_for_label }}">{{ form.username.label }}:</label>
+        {% render_field form.username %}
+        <label for="{{ form.password.id_for_label }}">{{ form.password.label }}:</label>
+        {% render_field form.password %}
+
+        <button type="submit">Salvar</button>
+        <a href="{% url 'user:list' %}">Cancelar</a>
+    </form>
+{% endblock main %}
