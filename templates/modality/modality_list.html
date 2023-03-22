@@ -1,0 +1,10 @@
+{% extends 'template_main.html' %}
+{% load static %}
+
+{% block main %}
+    {% for modality in modalities %}
+        <p><a href="">{{ modality.pk }} {{ modality.name }}</a></p>
+    {% empty %}
+        <p>Não há Modalidades cadastradas.</p>
+    {% endfor %}
+{% endblock main %}

@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     # 3rd Party
     'widget_tweaks',
     # Local Apps
-    'user.apps.UserConfig',
+    'user',
+    'modality',
 ]
 
 MIDDLEWARE = [
