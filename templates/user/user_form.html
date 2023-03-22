@@ -2,6 +2,10 @@
 {% load static %}
 {% load widget_tweaks %}
 
+{% block page_title %}
+{{ page_title }}
+{% endblock page_title %}
+
 {% block main %}
     <form method="post">
         {% csrf_token %}
