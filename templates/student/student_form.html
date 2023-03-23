@@ -1,0 +1,25 @@
+{% extends 'template_main.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block page_title %}
+{{ page_title }}
+{% endblock page_title %}
+
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+
+        <label for="{{ form.registration.id_for_label }}">{{ form.registration.label }}:</label>
+        {% render_field form.registration %}
+        <label for="{{ form.name.id_for_label }}">{{ form.name.label }}:</label>
+        {% render_field form.name %}
+        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
+        {% render_field form.email %}
+        <label for="{{ form.phone_number.id_for_label }}">{{ form.phone_number.label }}:</label>
+        {% render_field form.phone_number %}
+
+        <button type="submit">Salvar</button>
+        <a href="{% url 'student:list' %}">Cancelar</a>
+    </form>
+{% endblock main %}
